@@ -1,0 +1,58 @@
+<li key="event.id" class="eventCard">
+  <div class="imageContainer">
+    <img
+      src="{{event.image}}"
+      alt="event_picture"
+      class="image"
+    />
+
+    <button 
+      [ngClass]="{
+          'likeButtonActive': event.isLiked,
+          'ikeButton': !event.isLiked
+        }"
+      type="button"
+      (click)="event.isLiked = !event.isLiked"
+    ></button>
+  </div>
+  <div class="descriptionContainer">
+    <div class="titleContainer">
+      <h3 class="title">
+        {{event.title}}
+      </h3>
+    </div>
+    <ul class="rowContainer">
+      <li class="rowItem">
+        <img src="../../../assets/eventIcons/calendar.svg" alt="календарь">
+        <div *ngIf="event.date_start.substr(5, 5) == event.date_end.substr(5, 5)">
+          {{event.date_start.substr(5, 5)}}
+          <img src="../../../assets/eventIcons/time.svg" alt="время" class="rowImg">
+          <p style="display: inline;">
+            {{event.date_start.substr(11, 5)}} - {{event.date_end.substr(11, 5)}}
+          </p>
+        </div>
+        <p *ngIf="event.date_start.substr(5, 5) !== event.date_end.substr(5, 5)">
+          <img src="../../../assets/eventIcons/time.svg" alt="время" class="rowImg">
+          {{event.date_start.substr(5, 5)}} {{event.date_start.substr(11, 5)}} - {{event.date_end.substr(5, 5)}} {{event.date_end.substr(11, 5)}}
+        </p>
+      </li>
+      <li class="rowItem">
+        <img src="../../../assets/eventIcons/place.svg" alt="место">
+        <p *ngIf="event.city !== '' && event.city !== ' '">
+          {{event.city}}
+        </p>
+        <p *ngIf="!(event.city !== '' && event.city !== ' ')">
+          Online
+        </p>
+      </li>
+      <li class="rowItem price">
+        <p *ngIf="event.price !== '0'">
+          {{event.price}} &#8381; 
+        </p>
+        <p *ngIf="event.price == '0'">
+          Бесплатно
+        </p>
+      </li>
+    </ul>
+  </div>
+</li>
