@@ -7,7 +7,9 @@ import {HttpClientModule} from '@angular/common/http'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { EventComponent } from './components/event/event.component'
 import { EventsPageComponent } from './pages/product-page/events-page.component';
-import { NavigationComponent } from './components/navigation/navigation.component'
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { FilterbarComponent } from './components/filterbar/filterbar.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     EventComponent,
     EventsPageComponent,
     NavigationComponent,
+    FilterbarComponent,
+    SearchInputComponent,
   ],
   imports: [
     BrowserModule,

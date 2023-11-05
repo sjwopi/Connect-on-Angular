@@ -9,7 +9,6 @@ import {EventsService} from '../../services/events.service'
 export class EventsPageComponent implements OnInit {
   loading = false
   term = ''
-
   constructor(
     public eventsService: EventsService
   ) {

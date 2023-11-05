@@ -1,3 +1,8 @@
-<app-event *ngFor="let event of eventsService.events"
-  [event]="event">
-</app-event>
+<!-- <app-event *ngFor="let event of eventsService.events" [event]="event">
+</app-event> -->
+
+<div class="page">
+  <app-filterbar></app-filterbar>
+  <app-event *ngFor="let event of eventsService.events" [event]="event">
+  </app-event>
+</div>

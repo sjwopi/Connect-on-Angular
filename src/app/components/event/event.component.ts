@@ -56,5 +56,4 @@ export class EventComponent {
       }
     ]
   }
-  details = false
 }

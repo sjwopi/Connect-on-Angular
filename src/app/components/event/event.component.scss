@@ -75,7 +75,7 @@
 
 .title {
   font-weight: 500;
-  color: var(--smallTitleDarkGreyColor);
+  color: $smallTitleDarkGreyColor;
   font-size: 20px;
   line-height: 1.2;
   margin: 0;
@@ -86,8 +86,8 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 25px;
-  margin: 8px 0 0 6px;
-  color: var(--purpleColor);
+  margin-top: 8px;
+  color: $purpleColor;
   width: fit-content;
   border-radius: 8px;
 }
@@ -100,22 +100,14 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: var(--mainTextGreyColor);
+  color: $mainTextGreyColor;
   white-space: wrap;
   list-style-type: none;
 
   .rowItem {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 4px;
-  }
-
-  .rowImg {
-    position: relative;
-    top: 4px;
-  }
-  p {
-    margin: 4px 0;
   }
 }
 
@@ -133,7 +125,7 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
-  color: var(--mainTextGreyColor);
+  color: $mainTextGreyColor;
   cursor: pointer;
 }
 
@@ -167,8 +159,8 @@
   .price {
     padding: 8px 12px;
     border-radius: 8px;
-    background: var(--lightPurpleColor);
-    color: var(--lightBeigeColor);
+    background: $lightPurpleColor;
+    color: $lightBeigeColor;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
