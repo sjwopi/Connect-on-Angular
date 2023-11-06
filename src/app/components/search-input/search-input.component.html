@@ -1,1 +1,11 @@
-<p>search-input works!</p>
+<form submit="" style="width:100%">
+  <input
+    (keyup)="changeValue()"
+    name="input.text"
+    type="text"
+    value="this.value"
+    placeholder={{input.placeholder}}
+    class="withForm ? inputWithForm : input"
+    [(ngModel)]="value"
+  />
+</form>

@@ -10,6 +10,7 @@ import { EventsPageComponent } from './pages/product-page/events-page.component'
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FilterbarComponent } from './components/filterbar/filterbar.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
+import { FilterEventsPipe } from './pipes/filter-events.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SearchInputComponent } from './components/search-input/search-input.com
     NavigationComponent,
     FilterbarComponent,
     SearchInputComponent,
+    FilterEventsPipe,
   ],
   imports: [
     BrowserModule,

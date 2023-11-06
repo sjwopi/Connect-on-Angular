@@ -3,8 +3,8 @@
   <ul class="filterList">
 
     <li className="listItem">
-      <p className="itemTitle">Название</p>
-      <app-search-input></app-search-input>
+      <p className="itemTitle">Название {{this.searchInputValue}}</p>
+      <app-search-input (change)="changeSearchInput($event)"></app-search-input>
       <!-- <SearchInput placeholder="Разработка" name="query" value={values.query} onChange={(event)=> {
         handleQueryChange(event);
         setFilters({ ...filters, q: event.target.value });

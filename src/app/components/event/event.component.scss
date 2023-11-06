@@ -87,12 +87,14 @@
   font-size: 20px;
   line-height: 25px;
   margin-top: 8px;
+  margin: 8px 0 0 6px;
   color: $purpleColor;
   width: fit-content;
   border-radius: 8px;
 }
 
 .rowContainer {
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -106,8 +108,15 @@
 
   .rowItem {
     display: flex;
-    align-items: start;
+    align-items: center;
     gap: 4px;
+  }
+  .rowImg {
+    position: relative;
+    top: 4px;
+  }
+  p {
+    margin: 4px 0;
   }
 }
 

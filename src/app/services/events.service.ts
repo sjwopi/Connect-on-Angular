@@ -15,11 +15,10 @@ export class EventsService {
   events: IEvent[] = []
 
   getAll(): Observable<IEvent[]> {
-    console.log("e")
     return this.http.get<IEvent[]>('http://localhost:3003/events').pipe(
       delay(200),
       retry(2),
-      tap(events => {this.events = events; console.log(events)})
+      tap(events => this.events = events)
     )
   }
 

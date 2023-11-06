@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./filterbar.component.scss']
 })
 export class FilterbarComponent {
-
+  public searchInputValue = '';
+  
+  changeSearchInput(text: string) {
+    this.searchInputValue = text;
+  }
 }
