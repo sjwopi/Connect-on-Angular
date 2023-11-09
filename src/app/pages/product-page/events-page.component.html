@@ -2,7 +2,10 @@
 </app-event> -->
 
 <div class="page">
-  <app-filterbar></app-filterbar>
-  <app-event *ngFor="let event of eventsService.events" [event]="event">
-  </app-event>
+  <app-filterbar (changeInputValue)="changeSearchInput($event)"></app-filterbar>
+
+  <div class="section">
+    <app-event *ngFor="let event of eventsService.events | filterEvents:searchInputValue | filterEventsFormat:checkboxFormat" [event]="event"></app-event>
+  </div>
+
 </div>

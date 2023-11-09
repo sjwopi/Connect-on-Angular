@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-filterbar',
@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./filterbar.component.scss']
 })
 export class FilterbarComponent {
-  public searchInputValue = '';
+  searchInputValue = '';
   
-  changeSearchInput(text: string) {
-    this.searchInputValue = text;
+  @Output()
+  changeInputValue: EventEmitter<string> = new EventEmitter<string>();
+
+
+  changeValue() {
+    this.changeInputValue.emit(this.searchInputValue);
   }
+  
 }

@@ -2,7 +2,7 @@
 
 .filterForm {
   font-family: "IBM Plex Sans";
-  width: 215px;
+  width: 315px;
   cursor: default;
   overflow-x: scroll;
   /* Для Firefox */
@@ -17,6 +17,8 @@
 }
 
 .filterTitle {
+  width: 100%;
+  text-align: center;
   padding-bottom: 40px;
   font-size: 32px;
   line-height: 38.4px;
@@ -56,8 +58,7 @@
     #ffffff 100%
   );
   border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0px 1px 4px rgba(36, 63, 97, 0.1),
-    0px 0px 1px rgba(36, 63, 97, 0.16);
+  box-shadow: 0px 0px 29px rgba(36, 63, 97, 0.9);
   border-radius: 12px;
   margin-top: 16px;
   z-index: 10;
@@ -146,4 +147,72 @@
   flex-wrap: wrap;
   margin: 10px;
   gap: 20px 8px;
+}
+
+.form {
+  width: 100%;
+}
+
+.input {
+  background: url("../../../assets/actionsicons/loupe.svg") no-repeat;
+  background-position-x: 12px;
+  background-position-y: center;
+  margin: -4px 0 9px 1px;
+  padding-left: 40px;
+  padding-right: 20px;
+  height: 34px;
+  width: 192px;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: 0px 1px 4px rgba(36, 63, 97, 0.1),
+    0px 0px 1px rgba(36, 63, 97, 0.16);
+  color: $smallTitleDarkGreyColor;
+  &:focus {
+    box-shadow: 0px 1px 4px rgba(103, 78, 174, 0.3),
+      0px 0px 1px rgba(103, 78, 174, 0.3);
+    outline: none;
+    color: $mainTitleDarkGreyColor;
+  }
+}
+.itemTitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: $smallTitleDarkGreyColor;
+  margin-bottom: 25px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkboxLabel {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  padding-left: 27px;
+  padding-bottom: 17px;
+  color: $mainTextGreyColor;
+  cursor: pointer;
+}
+
+.checkboxLabel:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: 2px solid $mainTextGreyColor;
+  border-radius: 2px;
+}
+
+.checkboxLabel:hover:before {
+  border-color: $purpleColor;
+}
+
+.checkbox:checked + .checkboxLabel:before {
+  background: url("../../../assets/actionsicons/check.svg") no-repeat;
+  background-position: center;
+  background-color: $purpleColor;
+  border-color: $purpleColor;
 }

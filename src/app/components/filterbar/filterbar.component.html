@@ -2,26 +2,32 @@
   <h2 class="filterTitle">Фильтры</h2>
   <ul class="filterList">
 
-    <li className="listItem">
-      <p className="itemTitle">Название {{this.searchInputValue}}</p>
-      <app-search-input (change)="changeSearchInput($event)"></app-search-input>
-      <!-- <SearchInput placeholder="Разработка" name="query" value={values.query} onChange={(event)=> {
-        handleQueryChange(event);
-        setFilters({ ...filters, q: event.target.value });
-        }}
-        onSubmit={(e) => e.preventDefault()}
-        /> -->
-    </li>
-<!--     <FiltersListItem title="Название">
-      <SearchInput placeholder="Разработка" name="query" value={values.query} onChange={(event)=> {
-        handleQueryChange(event);
-        setFilters({ ...filters, q: event.target.value });
-        }}
-        onSubmit={(e) => e.preventDefault()}
-        />
-    </FiltersListItem> -->
 
-<!--     <FiltersListItem title="Формат">
+    <li class="listItem">
+      <p class="itemTitle">Название</p>
+      <form submit="" style="width:100%" class="form">
+        <input class="input" (keyup)="changeValue()" name="searchInput" type="text" placeholder="Разработка"
+          [(ngModel)]="searchInputValue" />
+      </form>
+    </li>
+
+
+    <li class="listItem">
+      <p class="itemTitle">Формат</p>
+
+      <label htmlFor="1">
+        <input id="1" name="formatCheckbox1" value="Online" type="checkbox" class="checkbox"/>
+        <span class="checkboxLabel">Online</span>
+      </label>
+
+      <label htmlFor="2">
+        <input id="2" name="formatCheckbox2" value="Offline" type="checkbox" class="checkbox"/>
+        <span class="checkboxLabel">Offline</span>
+      </label>
+
+    </li>
+
+    <!--     <FiltersListItem title="Формат">
       <InputCheckbox label="online" value="Online" name="status" checked={values.status.includes("Online")}
         onChange={(event)=> {
         handleQueryChange(event);
@@ -42,7 +48,13 @@
           />
     </FiltersListItem> -->
 
-<!--     <FiltersListItem title="Город">
+
+
+
+
+
+
+    <!--     <FiltersListItem title="Город">
       <SearchInput placeholder="Поиск города" name="city" value={values.city} onChange={(event)=> {
         handleInputChange(event);
         setFilters({
@@ -70,14 +82,14 @@
         )}
     </FiltersListItem> -->
 
-<!--     <FiltersListItem title="Дата">
+    <!--     <FiltersListItem title="Дата">
       {renderDateOptions()}
       <button onClick={toggleShowAllDates} class="showMore">
         {showAllDates ? "Показать меньше" : "Показать больше"}
       </button>
     </FiltersListItem> -->
 
-<!--     <FiltersListItem title="Направление">
+    <!--     <FiltersListItem title="Направление">
       {renderSpecialityList()}
       {dataLists?.topics?.length > 3 && (
       <button onClick={toggleShowAllTopics} class="showMore">
@@ -86,7 +98,7 @@
       )}
     </FiltersListItem> -->
 
-<!--     <FiltersListItem title="Цена">
+    <!--     <FiltersListItem title="Цена">
       <InputRadio label="free" value="Бесплатно" name="price" checked={values.price==="Бесплатно" } onChange={(event)=>
         {
         handleQueryChange(event);
@@ -100,7 +112,7 @@
           />
     </FiltersListItem> -->
 
-<!--     <FiltersListItem title="Теги">
+    <!--     <FiltersListItem title="Теги">
       <SearchInput placeholder="Поиск тега" name="findTags" value={values.findTags}
         onChange={(event)=> {
         handleQueryChange(event);

@@ -9,8 +9,8 @@ import { EventComponent } from './components/event/event.component'
 import { EventsPageComponent } from './pages/product-page/events-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FilterbarComponent } from './components/filterbar/filterbar.component';
-import { SearchInputComponent } from './components/search-input/search-input.component';
 import { FilterEventsPipe } from './pipes/filter-events.pipe';
+import { FilterEventsFormatPipe } from './pipes/filter-events-format.pipe';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { FilterEventsPipe } from './pipes/filter-events.pipe';
     EventsPageComponent,
     NavigationComponent,
     FilterbarComponent,
-    SearchInputComponent,
     FilterEventsPipe,
+    FilterEventsFormatPipe
   ],
   imports: [
     BrowserModule,
