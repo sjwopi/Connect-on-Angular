@@ -5,7 +5,10 @@ import { IEvent } from '../models/event';
   name: 'filterEventsFormat'
 })
 export class FilterEventsFormatPipe implements PipeTransform {
-  transform(events: IEvent[], form: string): IEvent[] {
-    return events.filter(p => p.format[0].name.toLowerCase() === 'online')
+  transform(events: IEvent[], form: string[]): IEvent[] {
+    if(form[1]) {
+      return events;
+    }
+    return events.filter(p => p.format[0].name.toLowerCase() === form[0])
   }
 }

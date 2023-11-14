@@ -6,7 +6,7 @@
     <li class="listItem">
       <p class="itemTitle">Название</p>
       <form submit="" style="width:100%" class="form">
-        <input class="input" (keyup)="changeValue()" name="searchInput" type="text" placeholder="Разработка"
+        <input class="input" (keyup)="changeValueInput()" name="searchInput" type="text" placeholder="Разработка"
           [(ngModel)]="searchInputValue" />
       </form>
     </li>
@@ -15,13 +15,13 @@
     <li class="listItem">
       <p class="itemTitle">Формат</p>
 
-      <label htmlFor="1">
-        <input id="1" name="formatCheckbox1" value="Online" type="checkbox" class="checkbox"/>
+      <label htmlFor="1"> 
+        <input id="1" name="formatCheckbox1" value="Online" type="checkbox" class="checkbox" (click)="changeValueCheckboxOnline()"/>
         <span class="checkboxLabel">Online</span>
       </label>
 
       <label htmlFor="2">
-        <input id="2" name="formatCheckbox2" value="Offline" type="checkbox" class="checkbox"/>
+        <input id="2" name="formatCheckbox2" value="Offline" type="checkbox" class="checkbox" (click)="changeValueCheckboxOnline()" />
         <span class="checkboxLabel">Offline</span>
       </label>
 

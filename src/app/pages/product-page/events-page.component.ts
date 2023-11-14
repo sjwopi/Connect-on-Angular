@@ -11,7 +11,7 @@ import { IEvent } from 'src/app/models/event';
 export class EventsPageComponent implements OnInit {
   loading = false
   searchInputValue = "";
-  checkboxFormat: string = "offlineonline";
+  checkboxFormat: string[] = ["offline", "online"];
 
   events: IEvent[] = this.eventsService.events
 
@@ -29,6 +29,17 @@ export class EventsPageComponent implements OnInit {
 
   changeSearchInput(text: string) {
     this.searchInputValue = text;
-    console.log("s")
+  }
+  changeCheckboxOnline(formats: any) {
+    console.log(formats)
+    this.checkboxFormat = formats;
+    /* if (this.checkboxFormat.includes(formats[])) {
+      this.checkboxFormat.find((item)=>{
+        return item!=text;
+      })
+    }
+    else {
+      this.checkboxFormat.push(text);
+    } */
   }
 }
