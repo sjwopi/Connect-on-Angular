@@ -5,10 +5,12 @@ import { IEvent } from '../models/event';
   name: 'filterEventsFormat'
 })
 export class FilterEventsFormatPipe implements PipeTransform {
-  transform(events: IEvent[], form: string[]): IEvent[] {
-    if(form[1]) {
-      return events;
+  transform(events: IEvent[], form:boolean[]): IEvent[] {
+    if (form[0] && !form[1]) {
+      return events.filter(p => p.format[0].name.toLowerCase() === 'online')
+    } else if (!form[0] && form[1]) {
+      return events.filter(p => p.format[0].name.toLowerCase() === 'offline')
     }
-    return events.filter(p => p.format[0].name.toLowerCase() === form[0])
+    return events
   }
 }

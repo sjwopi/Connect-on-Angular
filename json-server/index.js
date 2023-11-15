@@ -32,6 +32,6 @@ server.use(jsonServer.bodyParser);
 server.use(router);
 
 // запуск сервера
-server.listen(3003, () => {
-  console.log('server is running on 3003 port');
+server.listen(3000, () => {
+  console.log('server is running on 3000 port');
 });

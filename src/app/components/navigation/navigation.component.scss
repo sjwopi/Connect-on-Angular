@@ -1,0 +1,45 @@
+@import "../../../assets/variables.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 180px);
+  height: 33px;
+  max-width: 1820px;
+  padding: 22px 40px;
+  margin: 0 0 60px 0;
+  border-bottom: 1px solid $lightBeigeColor;
+
+  &__right {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .link {
+    font-family: "IBM Plex Sans";
+    display: flex;
+    flex-direction: row;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    color: $mainTitleDarkGreyColor;
+    align-items: center;
+    gap: 5px;
+    margin-right: 40px;
+  }
+}
+
+.logoLink {
+  font-family: "IBM Plex Sans";
+  font-weight: 700;
+  font-size: 32px;
+  text-decoration: none;
+  color: $blackColor;
+
+  span {
+    color: $purpleColor;
+  }
+}

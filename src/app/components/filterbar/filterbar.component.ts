@@ -5,25 +5,28 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
   templateUrl: './filterbar.component.html',
   styleUrls: ['./filterbar.component.scss']
 })
-export class FilterbarComponent implements OnInit{
-  ngOnInit(): void {
-    this.changeValueCheckboxOnline()
-  }
-  searchInputValue = '';
-  checkboxFormats:string[] = [];
+export class FilterbarComponent {
+  searchInputValue: string = '';
+  checkboxOnline: boolean = false;
+  checkboxOffline: boolean = false;
 
 
   
   @Output()
   changeInputValue: EventEmitter<string> = new EventEmitter<string>();
   @Output()
-  changeCheckboxOnlineValue: EventEmitter<string[]> = new EventEmitter<string[]>();
+  changeCheckboxOnlineValue: EventEmitter<boolean[]> = new EventEmitter<boolean[]>();
 
 
   changeValueInput() {
     this.changeInputValue.emit(this.searchInputValue);
   }
   changeValueCheckboxOnline() {
-    if(this.checkboxFormats) this.checkboxFormats.push("online")
+    this.checkboxOnline = !this.checkboxOnline;
+    this.changeCheckboxOnlineValue.emit([this.checkboxOnline, this.checkboxOffline])
+  }
+  changeValueCheckboxOffline() {
+    this.checkboxOffline = !this.checkboxOffline;
+    this.changeCheckboxOnlineValue.emit([this.checkboxOnline, this.checkboxOffline])
   }
 }

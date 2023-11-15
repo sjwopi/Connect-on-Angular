@@ -1,0 +1,24 @@
+<div class="login">
+
+  <h2 class="login__title">Войдите</h2>
+
+  <form class="login__form" novalidate>
+
+    <input placeholder="Username" class="login__name" required minlength="2" maxlength="40">
+    <span class="username-error"></span>
+
+    <input placeholder="Password" type="password" class="login__password" required minlength="8" maxlength="20">
+    <span class="description-error"></span>
+
+    <div class="login__btns">
+      <button routerLink="/" class="login__submit-form login__submit-form_back">Отмена</button>
+      <input name="save-button" type="submit" value="Войти" class="login__submit-form">
+    </div>
+
+    <div class="login__btns_h">
+      <p>Нет аккаунта?</p>
+      <a routerLink="/register" class="login__register">Регистрация</a>
+    </div>
+
+  </form>
+</div>

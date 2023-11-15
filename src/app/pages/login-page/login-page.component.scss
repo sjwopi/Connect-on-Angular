@@ -1,0 +1,124 @@
+@import "../../../assets/variables.scss";
+
+.login {
+  font-family: "IBM Plex Sans";
+  width: 360px;
+  height: 305px;
+  padding: 35px;
+  border-radius: 10px;
+  background-color: $whiteColor;
+  position: relative;
+  top: 45vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.1);
+
+  &__form {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    color: $blackColor;
+    margin: 0 0 44px 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 29px;
+  }
+
+  &__name {
+    width: calc(100% - 24px);
+    height: 35px;
+    padding: 4px 12px;
+    margin: 0 0 20px 0;
+    border: none;
+    border-bottom: 1px solid $purpleColor;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    outline: none;
+
+    /* &_invalid {
+      border-bottom: 1px solid rgba(255, 0, 0, 1);
+    } */
+
+    &:focus {
+      border: 2px solid $purpleColor;
+      border-radius: 5px;
+    }
+  }
+
+  &__password {
+    width: calc(100% - 24px);
+    height: 35px;
+    padding: 4px 12px;
+    margin: 0 0 50px 0;
+    border: none;
+    border-bottom: 1px solid $purpleColor;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    outline: none;
+
+    /* &_invalid {
+      border-bottom: 1px solid rgba(255, 0, 0, 1);
+    } */
+
+    &:focus {
+      border: 2px solid $purpleColor;
+      border-radius: 5px;
+    }
+  }
+  &__btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__btns_h {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__submit-form {
+    display: inline-block;
+    background: $purpleColor;
+    color: $whiteColor;
+    width: 40%;
+    height: 40px;
+    padding: 0;
+    margin: 12px 0 0 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    transition: all .3s;
+
+    &_back {
+      text-decoration: none;
+      background: $lightGrey;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &__register {
+    display: flex;
+    color: $blackColor;
+    align-items: center;
+    margin-left: 8px;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
