@@ -1,6 +1,7 @@
 @import "../../../assets/variables.scss";
 
 .eventCard {
+  position: relative;
   font-family: "IBM Plex Sans";
   padding: 10px;
   margin-bottom: 30px;
@@ -41,7 +42,7 @@
   }
 
   .likeButton {
-    /* background: url(../../images/like-button.svg) no-repeat center; */
+    background: url(../../../assets/othericons/favorites-header-icon.svg) no-repeat center;
     background-size: 19.5px 19px;
     width: 19.5px;
     height: 19px;
@@ -53,7 +54,7 @@
   }
 
   .likeButtonActive {
-    /* background: url(../../images/like-button_active.svg) no-repeat center; */
+    background: url(../../../assets/othericons/like-button_active.svg) no-repeat center;
     background-size: 21.01px 20.25px;
     width: 21.01px;
     height: 20.25px;
@@ -125,54 +126,4 @@
   flex-direction: column;
   gap: 8px;
   max-width: 296px;
-}
-
-.eventFigure {
-  display: flex;
-  align-items: center;
-  gap: 10.5px;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  color: $mainTextGreyColor;
-  cursor: pointer;
-}
-
-@media screen and (min-width: 321px) and (max-width: 1080px) {
-  .eventCard {
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-
-    .imageContainer {
-      min-width: 100%;
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .title {
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 110%;
-  }
-
-  .rowContainer {
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-  }
-
-  .price {
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: $lightPurpleColor;
-    color: $lightBeigeColor;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%;
-  }
 }

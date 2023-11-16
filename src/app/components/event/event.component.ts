@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { IEvent } from 'src/app/models/event'
+import { AuthService } from 'src/app/services/user.service'
 
 @Component({
   selector: 'app-event',
@@ -56,4 +57,8 @@ export class EventComponent {
       }
     ]
   }
+
+  constructor(
+    public authService: AuthService
+  ) { }
 }

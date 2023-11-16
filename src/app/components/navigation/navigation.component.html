@@ -8,7 +8,8 @@
       <span>Избранное</span>
     </a>
 
-    <a routerLink="/login" class="link">Войти</a>
+    <a *ngIf="!authService.isLoggedIn()" routerLink="/login" class="link link_log">Войти</a>
+    <a *ngIf="authService.isLoggedIn()" routerLink="/" class="link link_log" (click)="onLogOut()">Выйти</a>
 
   </div>
 </nav>

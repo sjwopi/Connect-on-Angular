@@ -15,6 +15,9 @@
       (click)="event.isLiked = !event.isLiked"
     ></button>
   </div>
+
+  <button *ngIf="authService.isLoggedIn()" class="likeButton"></button>
+  
   <div class="descriptionContainer">
     <div class="titleContainer">
       <h3 class="title">

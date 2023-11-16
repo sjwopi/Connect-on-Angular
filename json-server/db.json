@@ -3069,19 +3069,17 @@
   ],
   "users": [
     {
-      "id": "1",
+      "id": "id7f13ebe21af44",
       "username": "admin",
-      "password": "123",
+      "password": "12345678",
       "role": "ADMIN",
-      "avatar": "",
       "favorites": []
     },
     {
-      "id": "2",
+      "id": "id63d15d6c849e8",
       "username": "user",
-      "password": "123",
+      "password": "qwertyui",
       "role": "USER",
-      "avatar": "",
       "favorites": [111, 112, 113, 114, 99]
     }
   ]
