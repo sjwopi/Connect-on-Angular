@@ -1,1 +1,29 @@
-<p>register-page works!</p>
+<div class="register">
+
+  <h2 class="register__title">Регистрация</h2>
+
+  <form class="register__form" novalidate>
+
+    <input placeholder="Username" class="register__name" required minlength="2" maxlength="40">
+    <span class="username-error"></span>
+
+    <input placeholder="Password" type="password" class="register__password" required minlength="8" maxlength="20">
+    <span class="description-error"></span>
+    <input placeholder="Repeat password" type="password" class="register__password" required minlength="8" maxlength="20">
+    <span class="description-error"></span>
+
+    <input placeholder="Email" class="register__email" required type="email">
+    <span class="username-error"></span>
+
+    <div class="register__btns">
+      <button routerLink="/" class="register__submit-form register__submit-form_back">Отмена</button>
+      <input name="save-button" type="submit" value="Регистрация" class="register__submit-form">
+    </div>
+
+    <div class="register__btns_h">
+      <p>Уже зарегистрированы?</p>
+      <a routerLink="/login" class="register__register">Войти</a>
+    </div>
+
+  </form>
+</div>
