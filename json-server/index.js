@@ -1,6 +1,5 @@
 const fs = require('fs');
 const jsonServer = require('json-server');
-const jsonServerAuth = require('json-server-auth');
 const path = require('path');
 
 const server = jsonServer.create();

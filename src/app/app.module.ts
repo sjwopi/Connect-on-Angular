@@ -12,9 +12,8 @@ import { FilterbarComponent } from './components/filterbar/filterbar.component';
 import { FilterEventsPipe } from './pipes/filter-events.pipe';
 import { FilterEventsFormatPipe } from './pipes/filter-events-format.pipe';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { FavoritesPageComponent } from './pages/favorites-page/favorites-page.component';
-import { FilterFavoritesEventsPipe } from './pipes/filter-favorites-events.pipe';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { AuthService } from './services/user.service'
 
 @NgModule({
   declarations: [
@@ -26,8 +25,6 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     FilterEventsPipe,
     FilterEventsFormatPipe,
     LoginPageComponent,
-    FavoritesPageComponent,
-    FilterFavoritesEventsPipe,
     RegisterPageComponent
   ],
   imports: [
@@ -37,7 +34,7 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

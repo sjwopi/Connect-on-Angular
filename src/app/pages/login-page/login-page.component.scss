@@ -3,7 +3,7 @@
 .login {
   font-family: "IBM Plex Sans";
   width: 360px;
-  height: 305px;
+  min-height: 305px;
   padding: 35px;
   border-radius: 10px;
   background-color: $whiteColor;
@@ -44,10 +44,6 @@
     font-weight: 400;
     outline: none;
 
-    /* &_invalid {
-      border-bottom: 1px solid rgba(255, 0, 0, 1);
-    } */
-
     &:focus {
       border: 2px solid $purpleColor;
       border-radius: 5px;
@@ -58,17 +54,13 @@
     width: calc(100% - 24px);
     height: 35px;
     padding: 4px 12px;
-    margin: 0 0 50px 0;
+    margin: 0 0 20px 0;
     border: none;
     border-bottom: 1px solid $purpleColor;
     font-size: 14px;
     line-height: 17px;
     font-weight: 400;
     outline: none;
-
-    /* &_invalid {
-      border-bottom: 1px solid rgba(255, 0, 0, 1);
-    } */
 
     &:focus {
       border: 2px solid $purpleColor;
@@ -103,10 +95,15 @@
     font-weight: 400;
     line-height: 22px;
     transition: all .3s;
-
+    &:disabled {
+      opacity: 0.5;
+    }
     &_back {
       text-decoration: none;
       background: $lightGrey;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     &:hover {
@@ -121,5 +118,15 @@
     &:hover {
       opacity: 0.8;
     }
+  }
+
+  &__error {
+    font-size: 14px;
+    display: none;
+    color: red;
+    margin: 0 0 20px 0;
+  }
+  .has-error {
+    display: block;
   }
 }

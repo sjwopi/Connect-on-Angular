@@ -9,6 +9,7 @@
   gap: 24px;
   align-items: center;
   display: flex;
+  width: 650px;
   cursor: default;
   -webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.1);
@@ -41,17 +42,6 @@
     }
   }
 
-  .likeButton {
-    background: url(../../../assets/othericons/favorites-header-icon.svg) no-repeat center;
-    background-size: 19.5px 19px;
-    width: 19.5px;
-    height: 19px;
-    top: 10px;
-    right: 10px;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-  }
 
   .likeButtonActive {
     background: url(../../../assets/othericons/like-button_active.svg) no-repeat center;
@@ -93,7 +83,23 @@
   width: fit-content;
   border-radius: 8px;
 }
-
+.go {
+  padding: 6px 10px;
+  font-size: 16px;
+  line-height: 16px;
+  color: $smallTitleDarkGreyColor;
+  transition: all 0.2s ease-in-out;
+  &_h {
+    margin-left: auto;
+    border: 1px solid $blackColor;
+    border-radius: 8px;
+    font-size: 16px;
+    color: $blackColor;
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+}
 .rowContainer {
   padding: 0;
   display: flex;
@@ -125,5 +131,5 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  max-width: 296px;
+  width: 296px;
 }

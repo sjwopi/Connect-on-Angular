@@ -4,15 +4,30 @@
 
   <form class="login__form" novalidate [formGroup]="loginForm" (ngSubmit)="submitLogin()">
 
-    <input formControlName="username" placeholder="Username" class="login__name" required minlength="2" maxlength="40">
-    <span class="username-error"></span>
+    <input id="username" formControlName="username" placeholder="Username" class="login__name" required minlength="4"
+      maxlength="40">
+    <div class="login__error"
+      [ngClass]="{'has-error': loginForm.get('username')?.invalid && loginForm.get('username')?.touched}">
+      <span *ngIf="loginForm.get('username')?.['errors']?.['required']">Поле username не может быть пустым</span>
+      <span *ngIf="loginForm.get('username')?.['errors']?.['minlength']">Поле username должно иметь минимум 4
+        символа</span>
+    </div>
 
-    <input formControlName="password" placeholder="Password" type="password" class="login__password" required maxlength="20">
-    <span class="password-error"></span>
+
+    <input formControlName="password" placeholder="Password" type="password" class="login__password" required
+      maxlength="20">
+    <div class="login__error"
+      [ngClass]="{'has-error': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}">
+      <span *ngIf="loginForm.get('password')?.['errors']?.['required']">Поле password не может быть пустым</span>
+      <span *ngIf="loginForm.get('password')?.['errors']?.['minlength']">Поле password должно иметь минимум 8 символов</span>
+    </div>
+    <p class="login__error has-error">{{messageErr}}</p>
+
 
     <div class="login__btns">
-      <button routerLink="/" class="login__submit-form login__submit-form_back">Отмена</button>
-      <input name="save-button" type="submit" value="Войти" class="login__submit-form" click="">
+      <div routerLink="/" class="login__submit-form login__submit-form_back">Отмена</div>
+      <button name="save-button" type="submit" class="login__submit-form" click="submitLogin()"
+        [disabled]="loginForm.invalid && this.isLoad">Войти</button>
     </div>
 
     <div class="login__btns_h">

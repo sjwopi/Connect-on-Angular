@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IUser } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,6 +11,8 @@ import { AuthService } from 'src/app/services/user.service';
 })
 export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;
+  messageErr: string = "";
+  isLoad: boolean = true;
 
   constructor(
     private router: Router,
@@ -18,17 +20,27 @@ export class LoginPageComponent implements OnInit {
   ) { }
 
   submitLogin() {
-    this.authService.login(this.loginForm.value).pipe().subscribe();
+    this.authService.login(this.loginForm.value).subscribe(user => {
+      if (user) {
+        if (user[0].password !== this.loginForm.value.password) {
+          console.log("asdfa")
+          this.messageErr = "Неверный пароль"
+        }
+      }
 
-    if(this.authService.user?.id) {
+      while (!this.authService.isLoggedIn()) {
+        this.isLoad = false;
+      }
       this.router.navigate([''])
-    }
+      this.isLoad = true;
+    })
+
   }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
       'username': new FormControl('', [Validators.required]),
-      'password': new FormControl('', [Validators.required, Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)])
+      'password': new FormControl('', [Validators.required, Validators.minLength(8)])
     });
     if (this.authService.isLoggedIn()) {
       this.router.navigate([''])

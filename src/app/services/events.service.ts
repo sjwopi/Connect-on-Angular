@@ -16,16 +16,9 @@ export class EventsService {
 
   getAll(): Observable<IEvent[]> {
     return this.http.get<IEvent[]>('http://localhost:3000/events').pipe(
-      delay(200),
+      delay(304),
       retry(2),
       tap(events => this.events = events)
     )
   }
-
-  /* create(event: IEvent): Observable<IEvent> {
-    return this.http.post<IEvent>('http://localhost:3000/events', event)
-      .pipe(
-        tap(prod => this.events.push(prod))
-      )
-  } */
 }

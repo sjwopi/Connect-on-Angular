@@ -16,6 +16,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    &_a {
+      width: auto;
+    }
   }
 
   .link {
@@ -29,8 +32,10 @@
     align-items: center;
     gap: 5px;
     margin-right: 40px;
+
     &_log {
       color: $purpleColor;
+      margin-right: 0px;
     }
   }
 }

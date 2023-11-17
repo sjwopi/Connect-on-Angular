@@ -9,7 +9,6 @@ import { IEvent } from 'src/app/models/event';
   styleUrls: ['./events-page.component.scss']
 })
 export class EventsPageComponent implements OnInit {
-  loading = false
   searchInputValue = "";
   checkboxFormat: boolean[] = [true, true];
 
@@ -20,11 +19,7 @@ export class EventsPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loading = true
-
-    this.eventsService.getAll().pipe().subscribe(() => {
-      this.loading = false
-    })
+    this.eventsService.getAll().pipe().subscribe()
   }
 
   changeSearchInput(text: string) {

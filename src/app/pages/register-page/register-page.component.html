@@ -2,22 +2,41 @@
 
   <h2 class="register__title">Регистрация</h2>
 
-  <form class="register__form" novalidate>
+  <form class="register__form" novalidate  [formGroup]="registerForm" (ngSubmit)="submitRegister()">
 
-    <input placeholder="Username" class="register__name" required minlength="2" maxlength="40">
+    <input placeholder="Username" formControlName="username" class="register__name" required minlength="2" maxlength="40">
     <span class="username-error"></span>
+    <div class="register__error"
+      [ngClass]="{'has-error': registerForm.get('username')?.invalid && registerForm.get('username')?.touched}">
+      <span *ngIf="registerForm.get('username')?.['errors']?.['required']">Поле username не может быть пустым</span>
+      <span *ngIf="registerForm.get('username')?.['errors']?.['minlength']">Поле username должно иметь минимум 4
+        символа</span>
+    </div>
 
-    <input placeholder="Password" type="password" class="register__password" required minlength="8" maxlength="20">
+    <input placeholder="Password" formControlName="password" type="password" class="register__password" required minlength="8" maxlength="20">
     <span class="description-error"></span>
-    <input placeholder="Repeat password" type="password" class="register__password" required minlength="8" maxlength="20">
+    <div class="register__error"
+      [ngClass]="{'has-error': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}">
+      <span *ngIf="registerForm.get('password')?.['errors']?.['required']">Поле password не может быть пустым</span>
+      <span *ngIf="registerForm.get('password')?.['errors']?.['minlength']">Поле password должно иметь минимум 8 символов</span>
+    </div>
+    
+    <input placeholder="Repeat password" formControlName="password2" type="password" class="register__password" required minlength="8" maxlength="20">
     <span class="description-error"></span>
+    <div class="register__error"
+      [ngClass]="{'has-error': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}">
+      <span *ngIf="registerForm.get('password2')?.['errors']?.['required']">Поле password не может быть пустым</span>
+      <span *ngIf="registerForm.get('password2')?.['errors']?.['minlength']">Поле password должно иметь минимум 8 символов</span>
+    </div>
+    <p class="register__error has-error">{{messageErr}}</p>
 
-    <input placeholder="Email" class="register__email" required type="email">
+    <input placeholder="Email" formControlName="email" class="register__email" required type="email">
     <span class="username-error"></span>
 
     <div class="register__btns">
-      <button routerLink="/" class="register__submit-form register__submit-form_back">Отмена</button>
-      <input name="save-button" type="submit" value="Регистрация" class="register__submit-form">
+      <div routerLink="/" class="register__submit-form register__submit-form_back">Отмена</div>
+      <button name="save-button" type="submit" class="register__submit-form" click="submitRegister()"
+        [disabled]="registerForm.invalid && this.isLoad">Регистрация</button>
     </div>
 
     <div class="register__btns_h">

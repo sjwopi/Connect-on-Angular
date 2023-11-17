@@ -11,10 +11,6 @@ export class NavigationComponent {
     public authService: AuthService
   ) { }
   onLogOut() {
-    let id: string = "id" + Math.random().toString(16).slice(2)
-    console.log(id)
-    let idq: string = "id" + Math.random().toString(16).slice(2)
-    console.log(idq)
     this.authService.delToken();
   }
 }
