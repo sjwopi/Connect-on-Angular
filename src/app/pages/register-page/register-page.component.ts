@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/user.service';
+import { validateEmail } from 'src/app/shared/validateEmail';
 
 @Component({
   selector: 'app-register-page',
@@ -42,7 +43,7 @@ export class RegisterPageComponent {
       'username': new FormControl('', [Validators.required]),
       'password': new FormControl('', [Validators.required, Validators.minLength(8)]),
       'password2': new FormControl('', [Validators.required, Validators.minLength(8)]),
-      'email': new FormControl('', [Validators.required, Validators.email])
+      'email': new FormControl('', [Validators.required, validateEmail])
     });
     if (this.authService.isLoggedIn()) {
       this.router.navigate([''])

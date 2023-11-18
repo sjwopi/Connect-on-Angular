@@ -22,7 +22,6 @@
     </div>
     
     <input placeholder="Repeat password" formControlName="password2" type="password" class="register__password" required minlength="8" maxlength="20">
-    <span class="description-error"></span>
     <div class="register__error"
       [ngClass]="{'has-error': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}">
       <span *ngIf="registerForm.get('password2')?.['errors']?.['required']">Поле password не может быть пустым</span>
@@ -31,7 +30,11 @@
     <p class="register__error has-error">{{messageErr}}</p>
 
     <input placeholder="Email" formControlName="email" class="register__email" required type="email">
-    <span class="username-error"></span>
+    <div class="register__error"
+      [ngClass]="{'has-error': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}">
+      <span *ngIf="registerForm.get('email')?.['errors']?.['required']">Поле password не может быть пустым</span>
+      <span *ngIf="!registerForm.get('email')?.['errors']?.['required']">Введите корректный email</span>
+    </div>
 
     <div class="register__btns">
       <div routerLink="/" class="register__submit-form register__submit-form_back">Отмена</div>

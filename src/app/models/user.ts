@@ -8,5 +8,6 @@ export interface IUser
   username: string,
   password: string,
   email: string,
-  role: IUserRole
+  role: IUserRole,
+  favorites: number[]
 }

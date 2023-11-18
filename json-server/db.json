@@ -3073,35 +3073,31 @@
       "username": "admin",
       "password": "12345678",
       "email": "admin@admin",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "favorites": []
     },
     {
       "id": "id63d15d6c849e8",
       "username": "user",
       "password": "qwertyui",
       "email": "user@user",
-      "role": "USER"
+      "role": "USER",
+      "favorites": [
+        111,
+        112,
+        116,
+        115,
+        114,
+        114
+      ]
     },
     {
-      "id": "idb33100ffe2929",
-      "username": "asdf",
-      "password": "12341234",
-      "email": "asdf@asdf",
-      "role": "USER"
-    },
-    {
-      "id": "idf25bd9323108c",
-      "username": "asdf",
-      "password": "12341234",
-      "email": "asdf@asdf",
-      "role": "USER"
-    },
-    {
-      "id": "id0bb83b968e703",
-      "username": "qwer",
-      "password": "qwerqwer",
-      "email": "qwer@qwer",
-      "role": "USER"
+      "id": "idfb025af5ae519",
+      "username": "Andrey",
+      "password": "12345678",
+      "email": "hfdhdfh@mail.ru",
+      "role": "USER",
+      "favorites": []
     }
   ]
 }

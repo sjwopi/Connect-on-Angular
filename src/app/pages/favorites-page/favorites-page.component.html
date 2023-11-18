@@ -1,0 +1,16 @@
+<app-navigation></app-navigation>
+
+<div class="pageFavorites">
+
+  <div class="container">
+    <h1 class="title">
+      Уже записан
+    </h1>
+    <p class="subtitle">Сохраненные мероприятия</p>
+  </div>
+
+  <div class="section">
+    <app-event *ngFor="let event of eventsService.events | filterFavoritesEvents:favorites" [event]="event"></app-event>
+  </div>
+
+</div>

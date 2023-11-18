@@ -15,7 +15,8 @@ export class AuthService {
     username: "",
     password: "",
     email: "",
-    role: IUserRole.USER
+    role: IUserRole.USER,
+    favorites: []
   };
   users: IUser[] = [];
   setToken(user: IUser) {
@@ -30,8 +31,18 @@ export class AuthService {
   isLoggedIn() {
     return this.getToken() !== null;
   }
+  pushFavorite(id: number) {
+    this.user = JSON.parse(this.getToken() as string)
+    this.user.favorites.push(id)
+    this.setToken(this.user)
+    return this.http.patch<IUser[]>(`http://localhost:3000/users/${JSON.parse(this.getToken() as string).id}`, this.user).pipe(
+      delay(200),
+      retry(2),
+      tap()
+    )
+  }
   getUser(): Observable<IUser[]> {
-    return this.http.get<IUser[]>(`http://localhost:3000/users?id=${this.getToken()}`).pipe(
+    return this.http.get<IUser[]>(`http://localhost:3000/users/${JSON.parse(this.getToken() as string).id}`).pipe(
       delay(200),
       retry(2),
       tap(users => { this.user = users[0]; })
@@ -56,7 +67,8 @@ export class AuthService {
       username: userInfo.username,
       password: userInfo.password,
       email: userInfo.email,
-      role: IUserRole.USER
+      role: IUserRole.USER,
+      favorites: []
     }
     return this.http.post<IUser>(`http://localhost:3000/users`, this.user).pipe(
       delay(200),

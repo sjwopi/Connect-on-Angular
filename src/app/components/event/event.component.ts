@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 import { IEvent } from 'src/app/models/event'
 import { AuthService } from 'src/app/services/user.service'
 
@@ -59,6 +60,12 @@ export class EventComponent {
   }
 
   constructor(
+    public router: Router,
     public authService: AuthService
   ) { }
+
+  goToEvent() {
+    console.log(this.event.id)
+    this.authService.pushFavorite(this.event.id).subscribe()
+  }
 }

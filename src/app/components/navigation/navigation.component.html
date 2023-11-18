@@ -3,6 +3,11 @@
 
   <div class="header__right header__right_a">
 
+    <a *ngIf="authService.isLoggedIn()" routerLink="/favorites" class="link">
+      <img src="../../../assets/othericons/favorites-header-icon.svg" />
+      <span>Уже записан</span>
+    </a>
+
     <a *ngIf="authService.isLoggedIn()" routerLink="/" class="link link_log" (click)="onLogOut()">Выйти</a>
     <a *ngIf="!authService.isLoggedIn()" routerLink="/login" class="link link_log">Войти</a>
 

@@ -55,10 +55,10 @@
         </p>
       </li>
 
-      <li *ngIf="authService.isLoggedIn()" class="go go_h">
+      <li *ngIf="authService.isLoggedIn() && this.router.url!=='/favorites'" class="go go_h" (click)="goToEvent()">
         Записываюсь!
       </li>
-      <li *ngIf="!authService.isLoggedIn()" class="go">
+      <li *ngIf="!authService.isLoggedIn() && this.router.url!=='/favorites'" class="go">
         Чтобы записаться, войдите
       </li>
     </ul>
